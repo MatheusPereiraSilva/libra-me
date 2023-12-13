@@ -1,0 +1,39 @@
+<form action="" [formGroup]="bookForm" (ngSubmit)="submit()">
+<section class="box">
+  <h1>Título do Livro</h1>
+  <p class="mr">Escreva seu título da mesma forma que ele aparece na capa do livro.</p>
+    <label for="">
+      Título
+      <input type="text" formControlName="name" required  (click)="validadorTitulo()">
+      <p class="p">O título do livro é: {{bookForm.value.name}}.</p>
+      <p class="none" id="titulo">Este campo é obrigatório</p>
+    </label>
+</section>
+<section class="box">
+  <h1>ISBN</h1>
+  <p class="mr">Escreva seu ISBN conforme indicado no verso da página de título.</p>
+    <label for="">
+      ISBN
+      <input type="text" required (click)="validadorIsbn()">
+      <p class="none" id="isbn">Este campo é obrigatório e precisa conter mais de 4 caracteres</p>
+    </label>
+</section>
+<section class="box">
+  <h1>Autor</h1>
+  <p class="mr">Insira o autor ou o colaborador principal Pseudônimos são permitidos. Outros autores podem ser adicionados no campo Colaboradores.</p>
+    <label for="">
+      Autor ou colaborador principal
+      <input type="text" placeholder="Nome Completo" required (click)="validadorAuthor()">
+      <p class="none" id="author">Este campo é obrigatório e precisa conter mais de 3 caracteres</p>
+    </label>
+</section>
+<section class="box">
+  <h1>Capa do Livro</h1>
+  <p class="mr">Insira a capa do livro em formato de imagem</p>
+    <label for="">
+      <input type="file" required>
+      <p class="none" id="photo">Este campo é obrigatório</p>
+    </label>
+</section>
+<button [disabled]="!bookForm.valid">Finalizar</button>
+</form>

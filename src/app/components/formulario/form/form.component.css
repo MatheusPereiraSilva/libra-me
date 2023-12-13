@@ -1,0 +1,79 @@
+.box {
+  background: #fff;
+  box-shadow: 21px 66px 152px 0px rgba(0, 0, 0, 0.04),
+    86px 262px 276px 0px rgba(0, 0, 0, 0.04),
+    193px 590px 373px 0px rgba(0, 0, 0, 0.02),
+    344px 1049px 442px 0px rgba(0, 0, 0, 0.01),
+    537px 1639px 483px 0px rgba(0, 0, 0, 0);
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 200px 700px;
+  gap: 30px;
+}
+label {
+  grid-column: 2;
+}
+p{
+  padding-right: 5px;
+}
+input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #0d61df;
+  background: #fff;
+  box-shadow: 6px 1px 14px 0px rgba(0, 0, 0, 0.05),
+    25px 3px 25px 0px rgba(0, 0, 0, 0.05), 55px 8px 34px 0px rgba(0, 0, 0, 0.03),
+    99px 14px 40px 0px rgba(0, 0, 0, 0.01), 154px 21px 44px 0px rgba(0, 0, 0, 0);
+  width: 600px;
+  font-size: 20px;
+  padding: 8px;
+}
+input:focus{
+  border: none;
+}
+.p{
+  font-size: 18px;
+}
+h1{
+  color: #515151;
+  font-size: 30px;
+}
+label{
+  font-weight: bold;
+}
+.mr{
+  font-size: 18px;
+}
+button{
+  border-radius: 8px;
+  background: #0D61DF;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: bold;
+  margin: 20px 450px;
+}
+button:hover{
+  background: #afa9a9;
+  color: #0D61DF;
+}
+.none{
+  display: none;
+}
+.error{
+  background-color: rgb(236, 9, 9);
+  padding: 5px;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: block;
+}

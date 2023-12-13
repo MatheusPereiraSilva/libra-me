@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "libra-me",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

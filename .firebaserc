@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lib-me": {
+      "hosting": {
+        "libra-me": [
+          "lib-me"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lib-me"
+  }
+}
