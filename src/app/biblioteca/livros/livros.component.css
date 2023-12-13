@@ -1,0 +1,37 @@
+.livro-item{
+  margin-bottom: 10px;
+}
+.livro-item > img{
+  height: 350px;
+  transition: .5s;
+}
+img:hover{
+  transform: scale(1.05);
+}
+h1{
+  margin-top: -40px;
+}
+h2{
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+span{
+  display: block;
+}
+button{
+  background: #e40606;
+  border: none;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  transition: .5s;
+  cursor: pointer;
+  margin-top: 5px;
+}
+button:hover{
+  color: #e40606;
+  background: #afa9a9;
+  font-weight: bold;
+  font-size: 18px;
+}
