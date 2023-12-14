@@ -38,3 +38,6 @@ a:hover{
   font-style: italic;
   font-size: 20px;
 }
+.link{
+  cursor: pointer;
+}

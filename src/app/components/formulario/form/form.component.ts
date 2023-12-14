@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
   FormControl,
@@ -20,8 +21,8 @@ export class FormComponent {
     isbn: new FormControl('', [Validators.minLength(4), Validators.required]),
     author: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
-  validadorTitulo(){
-    if(!this.bookForm.get('name')?.valid){
+  validadorTitulo() {
+    if (!this.bookForm.get('name')?.valid) {
       document.getElementById('titulo')?.classList.remove('none');
       document.getElementById('titulo')?.classList.add('error');
     } else {
@@ -29,8 +30,8 @@ export class FormComponent {
       document.getElementById('titulo')?.classList.add('none');
     }
   }
-  validadorIsbn(){
-    if(!this.bookForm.get('isbn')?.valid){
+  validadorIsbn() {
+    if (!this.bookForm.get('isbn')?.valid) {
       document.getElementById('isbn')?.classList.remove('none');
       document.getElementById('isbn')?.classList.add('error');
     } else {
@@ -38,8 +39,8 @@ export class FormComponent {
       document.getElementById('isbn')?.classList.add('none');
     }
   }
-  validadorAuthor(){
-    if(!this.bookForm.get('author')?.valid){
+  validadorAuthor() {
+    if (!this.bookForm.get('author')?.valid) {
       document.getElementById('author')?.classList.remove('none');
       document.getElementById('author')?.classList.add('error');
     } else {
@@ -47,9 +48,19 @@ export class FormComponent {
       document.getElementById('author')?.classList.add('none');
     }
   }
-  public submit(){
-    if(this.bookForm.valid){
-      
-    }
+  public submit() {
+      // https://lib-me-default-rtdb.firebaseio.com/
+      fetch('https://lib-me-default-rtdb.firebaseio.com/:livros.json', {
+        method: 'POST',
+        body: JSON.stringify({
+          nome: 'rere',
+          isbn: 'rere',
+          author: 'rere',
+          image: 'rere',
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error)) 
   }
 }

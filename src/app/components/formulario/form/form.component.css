@@ -9,7 +9,7 @@
   padding-left: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 1000px;
+  width: 850px;
   display: grid;
   grid-template-columns: 200px 700px;
   gap: 30px;
@@ -30,7 +30,7 @@ input {
   box-shadow: 6px 1px 14px 0px rgba(0, 0, 0, 0.05),
     25px 3px 25px 0px rgba(0, 0, 0, 0.05), 55px 8px 34px 0px rgba(0, 0, 0, 0.03),
     99px 14px 40px 0px rgba(0, 0, 0, 0.01), 154px 21px 44px 0px rgba(0, 0, 0, 0);
-  width: 600px;
+  width: 550px;
   font-size: 20px;
   padding: 8px;
 }
@@ -47,8 +47,9 @@ h1{
 label{
   font-weight: bold;
 }
-.mr{
+.box>.mr{
   font-size: 18px;
+  max-width: 550px;
 }
 button{
   border-radius: 8px;
@@ -76,4 +77,11 @@ button:hover{
   border: 1px solid #333;
   border-radius: 5px;
   display: block;
+}
+.correct{
+  background: rgb(19, 241, 19);
+  width: 330px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
 }

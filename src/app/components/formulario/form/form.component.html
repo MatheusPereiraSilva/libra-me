@@ -4,7 +4,7 @@
   <p class="mr">Escreva seu título da mesma forma que ele aparece na capa do livro.</p>
     <label for="">
       Título
-      <input type="text" formControlName="name" required  (click)="validadorTitulo()">
+      <input name="name" type="text" formControlName="name" required  (click)="validadorTitulo()">
       <p class="p">O título do livro é: {{bookForm.value.name}}.</p>
       <p class="none" id="titulo">Este campo é obrigatório</p>
     </label>
@@ -29,11 +29,12 @@
 </section>
 <section class="box">
   <h1>Capa do Livro</h1>
-  <p class="mr">Insira a capa do livro em formato de imagem</p>
+  <p class="mr">Insira a capa do livro em formato de URL</p>
     <label for="">
-      <input type="file" required>
+      <input type="text" required>
       <p class="none" id="photo">Este campo é obrigatório</p>
     </label>
 </section>
-<button [disabled]="!bookForm.valid">Finalizar</button>
+<button (click)="submit()">Finalizar</button>
+<h2 class="correct">Livro Enviado com Sucesso</h2>
 </form>
