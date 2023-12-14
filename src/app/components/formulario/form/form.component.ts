@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { ServiceService } from './../../../services/service.service';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -15,7 +15,10 @@ import {
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
+  #service = inject(ServiceService);
+  public getBook = signal<any>(null);
+  ngOnInit(): void {}
   public bookForm = new FormGroup({
     name: new FormControl('', Validators.required),
     isbn: new FormControl('', [Validators.minLength(4), Validators.required]),
@@ -48,19 +51,12 @@ export class FormComponent {
       document.getElementById('author')?.classList.add('none');
     }
   }
-  public submit() {
-      // https://lib-me-default-rtdb.firebaseio.com/
-      fetch('https://lib-me-default-rtdb.firebaseio.com/:livros.json', {
-        method: 'POST',
-        body: JSON.stringify({
-          nome: 'rere',
-          isbn: 'rere',
-          author: 'rere',
-          image: 'rere',
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.log(error)) 
+  public httpBookCreate(
+    author: any,
+    image: any,
+    isbn: any,
+    nome: any,
+  ) {
+    return this.#service.httpBookCreate$(author, image, isbn, nome).subscribe();
   }
 }

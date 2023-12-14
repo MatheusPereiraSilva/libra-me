@@ -1,10 +1,10 @@
-<form action="" [formGroup]="bookForm" (ngSubmit)="submit()">
+<form action="" method="POST" [formGroup]="bookForm" (ngSubmit)="httpBookCreate([createAuthor], [createNome], [createIsbn], [createImage])">
 <section class="box">
   <h1>Título do Livro</h1>
   <p class="mr">Escreva seu título da mesma forma que ele aparece na capa do livro.</p>
     <label for="">
       Título
-      <input name="name" type="text" formControlName="name" required  (click)="validadorTitulo()">
+      <input name="name" type="text" formControlName="name" required  (click)="validadorTitulo()" #createNome>
       <p class="p">O título do livro é: {{bookForm.value.name}}.</p>
       <p class="none" id="titulo">Este campo é obrigatório</p>
     </label>
@@ -14,7 +14,7 @@
   <p class="mr">Escreva seu ISBN conforme indicado no verso da página de título.</p>
     <label for="">
       ISBN
-      <input type="text" required (click)="validadorIsbn()">
+      <input type="text" required (click)="validadorIsbn()" #createIsbn>
       <p class="none" id="isbn">Este campo é obrigatório e precisa conter mais de 4 caracteres</p>
     </label>
 </section>
@@ -23,7 +23,7 @@
   <p class="mr">Insira o autor ou o colaborador principal Pseudônimos são permitidos. Outros autores podem ser adicionados no campo Colaboradores.</p>
     <label for="">
       Autor ou colaborador principal
-      <input type="text" placeholder="Nome Completo" required (click)="validadorAuthor()">
+      <input type="text" placeholder="Nome Completo" required (click)="validadorAuthor()" #createAuthor>
       <p class="none" id="author">Este campo é obrigatório e precisa conter mais de 3 caracteres</p>
     </label>
 </section>
@@ -31,10 +31,10 @@
   <h1>Capa do Livro</h1>
   <p class="mr">Insira a capa do livro em formato de URL</p>
     <label for="">
-      <input type="text" required>
+      <input type="text" required #createImage>
       <p class="none" id="photo">Este campo é obrigatório</p>
     </label>
 </section>
-<button (click)="submit()">Finalizar</button>
+<input id="button" type="submit" name="Finalizar" (click)="httpBookCreate(createAuthor.value, createNome.value, createIsbn.value, createImage.value)"/>
 <h2 class="correct">Livro Enviado com Sucesso</h2>
 </form>
