@@ -30,7 +30,7 @@ input {
   box-shadow: 6px 1px 14px 0px rgba(0, 0, 0, 0.05),
     25px 3px 25px 0px rgba(0, 0, 0, 0.05), 55px 8px 34px 0px rgba(0, 0, 0, 0.03),
     99px 14px 40px 0px rgba(0, 0, 0, 0.01), 154px 21px 44px 0px rgba(0, 0, 0, 0);
-  width: 550px;
+  width: 600px;
   font-size: 20px;
   padding: 8px;
 }
@@ -49,7 +49,7 @@ label{
 }
 .box>.mr{
   font-size: 18px;
-  max-width: 550px;
+  max-width: 600px;
 }
 #button{
   border-radius: 8px;
@@ -78,6 +78,7 @@ label{
   border: 1px solid #333;
   border-radius: 5px;
   display: block;
+  width: 550px;
 }
 .correct{
   background: rgb(19, 241, 19);

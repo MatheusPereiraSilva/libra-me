@@ -52,11 +52,11 @@ export class FormComponent implements OnInit {
     }
   }
   public httpBookCreate(
+    nome: any,
+    isbn: any,
     author: any,
     image: any,
-    isbn: any,
-    nome: any,
   ) {
-    return this.#service.httpBookCreate$(author, image, isbn, nome).subscribe();
+    return this.#service.httpBookCreate$(nome, isbn, author, image).subscribe();
   }
 }
